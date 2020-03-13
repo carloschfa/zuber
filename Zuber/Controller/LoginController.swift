@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginController.swift
 //  Zuber
 //
 //  Created by Carlos Henrique Antunes on 3/13/20.
@@ -8,13 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class LoginController: UIViewController {
+  
+  // MARK: - Properties
+  
+  // MARK: - Lifecycle
+  
   override func viewDidLoad() {
+    
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+    
+    view.backgroundColor = .red
   }
-
-
+  
 }
-
