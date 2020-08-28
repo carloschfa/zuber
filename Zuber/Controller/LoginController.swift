@@ -21,7 +21,9 @@ class LoginController: UIViewController {
     }()
     
     private lazy var emailContainerView: UIView = {
-        return UIView().inputContainerView(image: #imageLiteral(resourceName: "ic_mail_outline_white_2x"), textfield: emailTextField)
+        let view = UIView().inputContainerView(image: #imageLiteral(resourceName: "ic_mail_outline_white_2x"), textfield: emailTextField)
+        view.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        return view
     }()
     
     private let emailTextField: UITextField = {
@@ -30,7 +32,9 @@ class LoginController: UIViewController {
     }()
     
     private lazy var passwordContainerView: UIView = {
-        return UIView().inputContainerView(image: #imageLiteral(resourceName: "ic_lock_outline_white_2x"), textfield: passwordTextField)
+        let view = UIView().inputContainerView(image: #imageLiteral(resourceName: "ic_lock_outline_white_2x"), textfield: passwordTextField)
+        view.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        return view
     }()
     
     private let passwordTextField: UITextField = {
@@ -50,24 +54,14 @@ class LoginController: UIViewController {
         titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor)
         titleLabel.centerX(in: view)
         
-        view.addSubview(emailContainerView)
-        view.addSubview(passwordContainerView)
+        let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView])
+        stack.axis = .vertical
+        stack.distribution = .fillEqually
+        stack.spacing = 16
         
-        emailContainerView.anchor(top: titleLabel.bottomAnchor,
-                                  left: view.leftAnchor,
-                                  right: view.rightAnchor,
-                                  paddingTop: 40,
-                                  paddingLeft: 15,
-                                  paddingRight: 15,
-                                  height: 50)
-        
-        passwordContainerView.anchor(top: emailContainerView.bottomAnchor,
-        left: view.leftAnchor,
-        right: view.rightAnchor,
-        paddingTop: 16,
-        paddingLeft: 15,
-        paddingRight: 15,
-        height: 50)
+        view.addSubview(stack)
+        stack.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor,
+                     paddingTop: 40, paddingLeft: 16, paddingRight: 16)
         
     }
     
