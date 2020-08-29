@@ -21,23 +21,34 @@ extension UIColor {
 
 extension UIView {
     
-    func inputContainerView(image: UIImage, textfield: UITextField) -> UIView {
+    func inputContainerView(image: UIImage, textfield: UITextField? = nil, segmentedControl: UISegmentedControl? = nil) -> UIView {
         let view = UIView()
         let imageView = UIImageView()
         imageView.image = image
         imageView.alpha = 0.87
         view.addSubview(imageView)
-        
         imageView.centerY(in: view)
-        imageView.anchor(left: view.leftAnchor, paddingLeft: 8, width: 24, height: 24)
         
-        view.addSubview(textfield)
-        textfield.centerY(in: view)
-        textfield.anchor(left: imageView.rightAnchor,
-                              bottom: view.bottomAnchor,
-                              right: view.rightAnchor,
-                              paddingLeft: 8,
-                              paddingBottom: 8)
+        if let textfield = textfield {
+            
+            imageView.anchor(left: view.leftAnchor, paddingLeft: 8, width: 24, height: 24)
+            
+            view.addSubview(textfield)
+            textfield.centerY(in: view)
+            textfield.anchor(left: imageView.rightAnchor,
+                                  bottom: view.bottomAnchor,
+                                  right: view.rightAnchor,
+                                  paddingLeft: 8,
+                                  paddingBottom: 8)
+        }
+        
+        if let segmentedControl = segmentedControl {
+            imageView.anchor(left: view.leftAnchor, paddingLeft: 8, width: 24, height: 24)
+            view.addSubview(segmentedControl)
+            segmentedControl.anchor(left: imageView.rightAnchor, right: view.rightAnchor, paddingLeft: 8, paddingRight: 8)
+            segmentedControl.centerY(in: view)
+        }
+        
         
         let separatorView = UIView()
         separatorView.backgroundColor = .lightGray
