@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -62,7 +62,6 @@
 				FBAA0E00D3E2D96B02437294 /* Pods-Zuber.debug.xcconfig */,
 				0DE5CDDA381ADB0864B6478B /* Pods-Zuber.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -414,8 +413,9 @@
 			baseConfigurationReference = FBAA0E00D3E2D96B02437294 /* Pods-Zuber.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XA5ZY8ZH24;
+				DEVELOPMENT_TEAM = GT7C9KV2QY;
 				INFOPLIST_FILE = Zuber/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -423,6 +423,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.carloschfa.zuber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -433,8 +434,9 @@
 			baseConfigurationReference = 0DE5CDDA381ADB0864B6478B /* Pods-Zuber.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XA5ZY8ZH24;
+				DEVELOPMENT_TEAM = GT7C9KV2QY;
 				INFOPLIST_FILE = Zuber/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -442,6 +444,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.carloschfa.zuber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

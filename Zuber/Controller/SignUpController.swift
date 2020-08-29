@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpController: UIViewController {
     
@@ -98,7 +99,24 @@ class SignUpController: UIViewController {
     // MARK: - Selectors
     
     @objc private func handleSignUp() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        guard let fullname = fullnameTextField.text else { return }
+        let accountType = accountTypeSegmentedControl.selectedSegmentIndex
         
+        Auth.auth().createUser(withEmail: email, password: password, completion: { (result, error) in
+            if let error = error {
+                print("Failed to register user with error: \(error)")
+                return
+            }
+                
+            guard let uid = result?.user.uid else { return }
+            let values: [String: Any] = ["email": email, "fullname": fullname, "accountType": accountType]
+            
+            Database.database().reference().child("users").child(uid).updateChildValues(values) { (error, ref) in
+                print("Successfully registered and saved data.")
+            }
+        })
     }
     
     @objc private func handleShowLogin() {
