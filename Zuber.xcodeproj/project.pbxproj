@@ -13,11 +13,14 @@
 		464C68CB241BE54D00E71E40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 464C68C9241BE54D00E71E40 /* LaunchScreen.storyboard */; };
 		464C68D8241BE62000E71E40 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464C68D7241BE62000E71E40 /* LoginController.swift */; };
 		464C68DA241C1AC400E71E40 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464C68D9241C1AC400E71E40 /* Extensions.swift */; };
+		8580790AE0E9708E0568F882 /* Pods_Zuber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A533F4C3303D6B606731D3EA /* Pods_Zuber.framework */; };
 		BA62115824F8895A001853AA /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62115724F8895A001853AA /* SignUpController.swift */; };
 		BA62115C24F9D710001853AA /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62115B24F9D710001853AA /* AuthButton.swift */; };
+		BA62115E24F9DD39001853AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA62115D24F9DD39001853AA /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0DE5CDDA381ADB0864B6478B /* Pods-Zuber.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zuber.release.xcconfig"; path = "Target Support Files/Pods-Zuber/Pods-Zuber.release.xcconfig"; sourceTree = "<group>"; };
 		464C68BB241BE54900E71E40 /* Zuber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zuber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		464C68BE241BE54900E71E40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		464C68C0241BE54900E71E40 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,8 +29,11 @@
 		464C68CC241BE54D00E71E40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		464C68D7241BE62000E71E40 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		464C68D9241C1AC400E71E40 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A533F4C3303D6B606731D3EA /* Pods_Zuber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zuber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA62115724F8895A001853AA /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		BA62115B24F9D710001853AA /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		BA62115D24F9DD39001853AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		FBAA0E00D3E2D96B02437294 /* Pods-Zuber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zuber.debug.xcconfig"; path = "Target Support Files/Pods-Zuber/Pods-Zuber.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +41,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8580790AE0E9708E0568F882 /* Pods_Zuber.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		242CB202975208BAC2B7CB3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A533F4C3303D6B606731D3EA /* Pods_Zuber.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3DFD91ECF664F7CA856ADB7C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FBAA0E00D3E2D96B02437294 /* Pods-Zuber.debug.xcconfig */,
+				0DE5CDDA381ADB0864B6478B /* Pods-Zuber.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		464C68B2241BE54800E71E40 = {
 			isa = PBXGroup;
 			children = (
 				464C68BD241BE54900E71E40 /* Zuber */,
 				464C68BC241BE54900E71E40 /* Products */,
+				3DFD91ECF664F7CA856ADB7C /* Pods */,
+				242CB202975208BAC2B7CB3E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +97,7 @@
 				464C68C7241BE54D00E71E40 /* Assets.xcassets */,
 				464C68C9241BE54D00E71E40 /* LaunchScreen.storyboard */,
 				464C68CC241BE54D00E71E40 /* Info.plist */,
+				BA62115D24F9DD39001853AA /* GoogleService-Info.plist */,
 			);
 			path = Zuber;
 			sourceTree = "<group>";
@@ -136,9 +164,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 464C68CF241BE54D00E71E40 /* Build configuration list for PBXNativeTarget "Zuber" */;
 			buildPhases = (
+				97F5D3710A7B244766DC722B /* [CP] Check Pods Manifest.lock */,
 				464C68B7241BE54900E71E40 /* Sources */,
 				464C68B8241BE54900E71E40 /* Frameworks */,
 				464C68B9241BE54900E71E40 /* Resources */,
+				2CEB0012B9EE62B5BAE5CF35 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -189,10 +219,53 @@
 			files = (
 				464C68CB241BE54D00E71E40 /* LaunchScreen.storyboard in Resources */,
 				464C68C8241BE54D00E71E40 /* Assets.xcassets in Resources */,
+				BA62115E24F9DD39001853AA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2CEB0012B9EE62B5BAE5CF35 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zuber/Pods-Zuber-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zuber/Pods-Zuber-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Zuber/Pods-Zuber-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97F5D3710A7B244766DC722B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Zuber-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		464C68B7241BE54900E71E40 /* Sources */ = {
@@ -338,6 +411,7 @@
 		};
 		464C68D0241BE54D00E71E40 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBAA0E00D3E2D96B02437294 /* Pods-Zuber.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -347,7 +421,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = carloschfa.Zuber;
+				PRODUCT_BUNDLE_IDENTIFIER = com.carloschfa.zuber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -356,6 +430,7 @@
 		};
 		464C68D1241BE54D00E71E40 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DE5CDDA381ADB0864B6478B /* Pods-Zuber.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -365,7 +440,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = carloschfa.Zuber;
+				PRODUCT_BUNDLE_IDENTIFIER = com.carloschfa.zuber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

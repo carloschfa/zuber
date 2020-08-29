@@ -71,6 +71,7 @@ class SignUpController: UIViewController {
         let button = AuthButton(type: .system)
         button.setTitle("Sign Up", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         return button
     }()
     
@@ -95,6 +96,10 @@ class SignUpController: UIViewController {
     }
     
     // MARK: - Selectors
+    
+    @objc private func handleSignUp() {
+        
+    }
     
     @objc private func handleShowLogin() {
         navigationController?.popViewController(animated: true)
