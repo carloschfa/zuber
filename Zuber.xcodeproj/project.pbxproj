@@ -14,6 +14,7 @@
 		464C68D8241BE62000E71E40 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464C68D7241BE62000E71E40 /* LoginController.swift */; };
 		464C68DA241C1AC400E71E40 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464C68D9241C1AC400E71E40 /* Extensions.swift */; };
 		8580790AE0E9708E0568F882 /* Pods_Zuber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A533F4C3303D6B606731D3EA /* Pods_Zuber.framework */; };
+		BA0FF66325083EDC008C8307 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0FF66225083EDC008C8307 /* HomeController.swift */; };
 		BA62115824F8895A001853AA /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62115724F8895A001853AA /* SignUpController.swift */; };
 		BA62115C24F9D710001853AA /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62115B24F9D710001853AA /* AuthButton.swift */; };
 		BA62115E24F9DD39001853AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA62115D24F9DD39001853AA /* GoogleService-Info.plist */; };
@@ -30,6 +31,7 @@
 		464C68D7241BE62000E71E40 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		464C68D9241C1AC400E71E40 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A533F4C3303D6B606731D3EA /* Pods_Zuber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zuber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA0FF66225083EDC008C8307 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		BA62115724F8895A001853AA /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		BA62115B24F9D710001853AA /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		BA62115D24F9DD39001853AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -121,6 +123,7 @@
 			children = (
 				464C68D7241BE62000E71E40 /* LoginController.swift */,
 				BA62115724F8895A001853AA /* SignUpController.swift */,
+				BA0FF66225083EDC008C8307 /* HomeController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			files = (
 				BA62115824F8895A001853AA /* SignUpController.swift in Sources */,
 				BA62115C24F9D710001853AA /* AuthButton.swift in Sources */,
+				BA0FF66325083EDC008C8307 /* HomeController.swift in Sources */,
 				464C68BF241BE54900E71E40 /* AppDelegate.swift in Sources */,
 				464C68D8241BE62000E71E40 /* LoginController.swift in Sources */,
 				464C68C1241BE54900E71E40 /* SceneDelegate.swift in Sources */,

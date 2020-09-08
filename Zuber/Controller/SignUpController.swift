@@ -114,7 +114,7 @@ class SignUpController: UIViewController {
             let values: [String: Any] = ["email": email, "fullname": fullname, "accountType": accountType]
             
             Database.database().reference().child("users").child(uid).updateChildValues(values) { (error, ref) in
-                print("Successfully registered and saved data.")
+                self.navigationController?.present(HomeController(), animated: true, completion: nil)
             }
         })
     }
@@ -151,8 +151,4 @@ class SignUpController: UIViewController {
         alreadyHaveAccountButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, height: 32)
     }
     
-    private func configureNavigationBar() {
-        navigationController?.navigationBar.isHidden = true
-        navigationController?.navigationBar.barStyle = .black
-    }
 }

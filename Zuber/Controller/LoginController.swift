@@ -88,14 +88,13 @@ class LoginController: UIViewController {
                 return
             }
             
-            print("Successfully logged in.")
+            self.navigationController?.setViewControllers([HomeController()], animated: true)
         }
     }
     
     // MARK: - Helper Functions
     
     private func configureUI() {
-        configureNavigationBar()
         view.backgroundColor = .backgroundColor
         
         view.addSubview(titleLabel)
@@ -116,11 +115,6 @@ class LoginController: UIViewController {
         view.addSubview(dontHaveAccountButton)
         dontHaveAccountButton.centerX(in: view)
         dontHaveAccountButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, height: 32)
-    }
-    
-    private func configureNavigationBar() {
-        navigationController?.navigationBar.isHidden = true
-        navigationController?.navigationBar.barStyle = .black
     }
     
 }
