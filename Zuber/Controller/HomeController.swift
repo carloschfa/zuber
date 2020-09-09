@@ -17,6 +17,8 @@ class HomeController: UIViewController {
     private let mapView = MKMapView()
     private let locationManager = CLLocationManager()
     
+    private let locationInputView = LocationInputActivationView()
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -46,9 +48,21 @@ class HomeController: UIViewController {
     
     // MARK: - Helper Functions
     
-    func configureUI() {
+    private func configureUI() {
+        configureMapView()
+        
+        view.addSubview(locationInputView)
+        locationInputView.centerX(in: view)
+        locationInputView.setDimensions(height: 50, width: view.frame.width - 64)
+        locationInputView.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
+    }
+    
+    private func configureMapView() {
         view.addSubview(mapView)
         mapView.frame = view.frame
+        
+        mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
     }
     
 }
