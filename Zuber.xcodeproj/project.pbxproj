@@ -20,6 +20,7 @@
 		BA62115C24F9D710001853AA /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62115B24F9D710001853AA /* AuthButton.swift */; };
 		BA62115E24F9DD39001853AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA62115D24F9DD39001853AA /* GoogleService-Info.plist */; };
 		BA78C5AB250C58600004BF70 /* LocationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78C5AA250C58600004BF70 /* LocationInputView.swift */; };
+		BA78C5AE250C6CD70004BF70 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78C5AD250C6CD70004BF70 /* LocationTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		BA62115B24F9D710001853AA /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		BA62115D24F9DD39001853AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		BA78C5AA250C58600004BF70 /* LocationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputView.swift; sourceTree = "<group>"; };
+		BA78C5AD250C6CD70004BF70 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		FBAA0E00D3E2D96B02437294 /* Pods-Zuber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zuber.debug.xcconfig"; path = "Target Support Files/Pods-Zuber/Pods-Zuber.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +152,7 @@
 		BA0FF6642508511D008C8307 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BA78C5AC250C6CA70004BF70 /* TableViewCells */,
 				BA0FF66525085141008C8307 /* LocationInputActivationView.swift */,
 				BA78C5AA250C58600004BF70 /* LocationInputView.swift */,
 			);
@@ -171,6 +174,14 @@
 				BA62115B24F9D710001853AA /* AuthButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		BA78C5AC250C6CA70004BF70 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				BA78C5AD250C6CD70004BF70 /* LocationTableViewCell.swift */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +305,7 @@
 				BA78C5AB250C58600004BF70 /* LocationInputView.swift in Sources */,
 				464C68BF241BE54900E71E40 /* AppDelegate.swift in Sources */,
 				464C68D8241BE62000E71E40 /* LoginController.swift in Sources */,
+				BA78C5AE250C6CD70004BF70 /* LocationTableViewCell.swift in Sources */,
 				464C68C1241BE54900E71E40 /* SceneDelegate.swift in Sources */,
 				BA0FF66625085141008C8307 /* LocationInputActivationView.swift in Sources */,
 				464C68DA241C1AC400E71E40 /* Extensions.swift in Sources */,
