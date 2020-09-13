@@ -8,10 +8,13 @@
 
 import UIKit
 import Firebase
+import GeoFire
 
 class SignUpController: UIViewController {
     
     // MARK: - Properties
+    
+    private var location = LocationHandler.shared.locationManager.location
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -94,6 +97,7 @@ class SignUpController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        print(location)
     }
     
     // MARK: - Selectors
@@ -113,9 +117,15 @@ class SignUpController: UIViewController {
             guard let uid = result?.user.uid else { return }
             let values: [String: Any] = ["email": email, "fullname": fullname, "accountType": accountType]
             
-            Database.database().reference().child("users").child(uid).updateChildValues(values) { (error, ref) in
-                self.navigationController?.present(HomeController(), animated: true, completion: nil)
+            if accountType == 1 {
+                guard let location = self.location else { return }
+                let geofire = GeoFire(firebaseRef: driverLocationsDb)
+                geofire.setLocation(location, forKey: uid) { (error) in
+                    self.updateUserData(uid: uid, values: values)
+                }
             }
+            
+            self.updateUserData(uid: uid, values: values)
         })
     }
     
@@ -124,6 +134,12 @@ class SignUpController: UIViewController {
     }
     
     // MARK: - Helper Functions
+    
+    private func updateUserData(uid: String, values: [String: Any]) {
+        usersDb.child(uid).updateChildValues(values) { (error, ref) in
+            self.navigationController?.present(HomeController(), animated: true, completion: nil)
+        }
+    }
     
     private func configureUI() {
         view.backgroundColor = .backgroundColor

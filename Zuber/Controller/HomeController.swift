@@ -17,13 +17,18 @@ class HomeController: UIViewController {
     // MARK: - Properties
     
     private let mapView = MKMapView()
-    private let locationManager = CLLocationManager()
+    private let locationManager = LocationHandler.shared.locationManager
     
     private let locationActivationView = LocationInputActivationView()
     private let locationInputView = LocationInputView()
     private let tableView = UITableView()
     
     private final let locationInputViewHeight: CGFloat = 200
+    private var user: User? {
+        didSet {
+            locationInputView.user = user
+        }
+    }
     
     // MARK: - Lifecycle
     
@@ -32,9 +37,16 @@ class HomeController: UIViewController {
         // signOut()
         checkIfUserIsLoggedIn()
         enableLocationServices()
+        fetchUserData()
     }
     
     // MARK: - API
+    
+    func fetchUserData() {
+        Service.shared.fetchUserData(completion: { user in
+            self.user = user
+        })
+    }
     
     func checkIfUserIsLoggedIn() {
         if Auth.auth().currentUser?.uid == nil {
@@ -115,9 +127,6 @@ class HomeController: UIViewController {
 extension HomeController: CLLocationManagerDelegate {
     
     private func enableLocationServices() {
-        
-        locationManager.delegate = self
-        
         switch CLLocationManager.authorizationStatus() {
         case .notDetermined:
             print("Not Determined")
@@ -136,11 +145,6 @@ extension HomeController: CLLocationManagerDelegate {
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse {
-            locationManager.requestAlwaysAuthorization()
-        }
-    }
 }
 
 // MARK: - LocationInputActivationViewDelegate

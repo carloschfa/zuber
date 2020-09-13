@@ -21,6 +21,9 @@
 		BA62115E24F9DD39001853AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA62115D24F9DD39001853AA /* GoogleService-Info.plist */; };
 		BA78C5AB250C58600004BF70 /* LocationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78C5AA250C58600004BF70 /* LocationInputView.swift */; };
 		BA78C5AE250C6CD70004BF70 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78C5AD250C6CD70004BF70 /* LocationTableViewCell.swift */; };
+		BA78C5B4250DE22A0004BF70 /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78C5B3250DE22A0004BF70 /* LocationHandler.swift */; };
+		BA78C5B6250DE87A0004BF70 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78C5B5250DE87A0004BF70 /* Service.swift */; };
+		BA78C5B8250DE89E0004BF70 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78C5B7250DE89E0004BF70 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,9 @@
 		BA62115D24F9DD39001853AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		BA78C5AA250C58600004BF70 /* LocationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputView.swift; sourceTree = "<group>"; };
 		BA78C5AD250C6CD70004BF70 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		BA78C5B3250DE22A0004BF70 /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
+		BA78C5B5250DE87A0004BF70 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		BA78C5B7250DE89E0004BF70 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FBAA0E00D3E2D96B02437294 /* Pods-Zuber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zuber.debug.xcconfig"; path = "Target Support Files/Pods-Zuber/Pods-Zuber.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				464C68D9241C1AC400E71E40 /* Extensions.swift */,
+				BA78C5B3250DE22A0004BF70 /* LocationHandler.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -120,6 +127,7 @@
 		464C68D3241BE58400E71E40 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				BA78C5B5250DE87A0004BF70 /* Service.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -145,6 +153,7 @@
 		464C68D6241BE58800E71E40 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BA78C5B7250DE89E0004BF70 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -300,12 +309,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA62115824F8895A001853AA /* SignUpController.swift in Sources */,
+				BA78C5B6250DE87A0004BF70 /* Service.swift in Sources */,
 				BA62115C24F9D710001853AA /* AuthButton.swift in Sources */,
 				BA0FF66325083EDC008C8307 /* HomeController.swift in Sources */,
 				BA78C5AB250C58600004BF70 /* LocationInputView.swift in Sources */,
 				464C68BF241BE54900E71E40 /* AppDelegate.swift in Sources */,
+				BA78C5B8250DE89E0004BF70 /* User.swift in Sources */,
 				464C68D8241BE62000E71E40 /* LoginController.swift in Sources */,
 				BA78C5AE250C6CD70004BF70 /* LocationTableViewCell.swift in Sources */,
+				BA78C5B4250DE22A0004BF70 /* LocationHandler.swift in Sources */,
 				464C68C1241BE54900E71E40 /* SceneDelegate.swift in Sources */,
 				BA0FF66625085141008C8307 /* LocationInputActivationView.swift in Sources */,
 				464C68DA241C1AC400E71E40 /* Extensions.swift in Sources */,
