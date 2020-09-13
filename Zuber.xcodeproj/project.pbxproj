@@ -24,6 +24,7 @@
 		BA78C5B4250DE22A0004BF70 /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78C5B3250DE22A0004BF70 /* LocationHandler.swift */; };
 		BA78C5B6250DE87A0004BF70 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78C5B5250DE87A0004BF70 /* Service.swift */; };
 		BA78C5B8250DE89E0004BF70 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78C5B7250DE89E0004BF70 /* User.swift */; };
+		BAEC55E3250DED4400F85BBD /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC55E2250DED4400F85BBD /* DriverAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		BA78C5B3250DE22A0004BF70 /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
 		BA78C5B5250DE87A0004BF70 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		BA78C5B7250DE89E0004BF70 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BAEC55E2250DED4400F85BBD /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
 		FBAA0E00D3E2D96B02437294 /* Pods-Zuber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zuber.debug.xcconfig"; path = "Target Support Files/Pods-Zuber/Pods-Zuber.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				BA78C5B7250DE89E0004BF70 /* User.swift */,
+				BAEC55E2250DED4400F85BBD /* DriverAnnotation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				BA78C5B6250DE87A0004BF70 /* Service.swift in Sources */,
 				BA62115C24F9D710001853AA /* AuthButton.swift in Sources */,
 				BA0FF66325083EDC008C8307 /* HomeController.swift in Sources */,
+				BAEC55E3250DED4400F85BBD /* DriverAnnotation.swift in Sources */,
 				BA78C5AB250C58600004BF70 /* LocationInputView.swift in Sources */,
 				464C68BF241BE54900E71E40 /* AppDelegate.swift in Sources */,
 				BA78C5B8250DE89E0004BF70 /* User.swift in Sources */,
