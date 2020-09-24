@@ -42,6 +42,10 @@ class HomeController: UIViewController {
     private var user: User? {
         didSet {
             locationInputView.user = user
+            
+            if user?.accountType == .passenger {
+                fetchDrivers()
+            }
         }
     }
     
@@ -133,7 +137,6 @@ class HomeController: UIViewController {
     private func configure() {
         configureUI()
         fetchUserData()
-        fetchDrivers()
     }
     
     private func configureActionButton(config: MenuButtonConfiguration) {
@@ -194,6 +197,7 @@ class HomeController: UIViewController {
     
     private func configureRideActionView() {
         view.addSubview(rideActionView)
+        rideActionView.delegate = self
         rideActionView.frame = CGRect(x: 0, y: view.frame.height, width: view.frame.width, height: rideActionViewHeight)
     }
     
@@ -429,5 +433,27 @@ extension HomeController: UITableViewDataSource {
         }
         
     }
+    
+}
+
+// MARK: - RideActionViewDelegate
+
+extension HomeController: RideActionViewDelegate {
+    
+    func uploadTrip(_ view: RideActionView) {
+        guard let pickupCoordinates = locationManager.location?.coordinate else { return }
+        guard let destinationCoordinates = view.destination?.coordinate else { return }
+        
+        Service.shared.uploadTrip(pickupCoordinates, destinationCoordinates) { (error, reference) in
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            print("Trip uploaded successfully!")
+        }
+        
+    }
+    
     
 }
