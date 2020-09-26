@@ -107,10 +107,10 @@ extension UIView {
         centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
-    func centerY(in view: UIView, leftAnchor: NSLayoutXAxisAnchor? = nil, paddingLeft: CGFloat = 0) {
+    func centerY(in view: UIView, leftAnchor: NSLayoutXAxisAnchor? = nil, paddingLeft: CGFloat = 0, contant: CGFloat = 0) {
         translatesAutoresizingMaskIntoConstraints = false
         
-        centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: contant).isActive = true
         
         if let left = leftAnchor {
             anchor(left: left, paddingLeft: paddingLeft)
@@ -178,5 +178,49 @@ extension MKMapView {
     }
 }
 
-
-
+extension UIViewController {
+    func shouldPresentLoadingView(_ present: Bool, message: String? = nil) {
+        if present {
+            let loadingView = UIView()
+            loadingView.frame = self.view.frame
+            loadingView.backgroundColor = .black
+            loadingView.alpha = 0
+            loadingView.tag = 1
+            
+            let indicator = UIActivityIndicatorView()
+            indicator.style = .large
+            indicator.color = .white
+            indicator.center = view.center
+            
+            let label = UILabel()
+            label.text = message
+            label.font = .systemFont(ofSize: 20)
+            label.textColor = .white
+            label.textAlignment = .center
+            label.alpha = 0.87
+            
+            view.addSubview(loadingView)
+            view.addSubview(indicator)
+            view.addSubview(label)
+            
+            label.centerX(in: view)
+            label.anchor(top: indicator.bottomAnchor, paddingTop: 32)
+            
+            indicator.startAnimating()
+            
+            UIView.animate(withDuration: 0.3) {
+                loadingView.alpha = 0.7
+            }
+        } else {
+            view.subviews.forEach { (view) in
+                if view.tag == 1 {
+                    UIView.animate(withDuration: 0.3, animations: {
+                        view.alpha = 0
+                    }, completion: { _ in
+                        view.removeFromSuperview()
+                    })
+                }
+            }
+        }
+    }
+}
