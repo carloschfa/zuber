@@ -149,6 +149,12 @@ class HomeController: UIViewController {
             
             if trip.state == .accepted {
                 self.shouldPresentLoadingView(false)
+                
+                guard let driverUid = trip.driverUid else { return }
+                Service.shared.fetchUserData(uid: driverUid) { (driver) in
+                    self.animateRideActionView(shouldShow: true, config: .tripAccepted, user: driver)
+                }
+                
             }
             
         }
@@ -212,7 +218,7 @@ class HomeController: UIViewController {
         locationActivationView.alpha = 0
         locationActivationView.delegate = self
         
-        UIView.animate(withDuration: 2.0) {
+        UIView.animate(withDuration: 0.3) {
             self.locationActivationView.alpha = 1
         }
     }
@@ -270,20 +276,24 @@ class HomeController: UIViewController {
         
     }
     
-    private func animateRideActionView(shouldShow: Bool, destination: MKPlacemark? = nil) {
+    private func animateRideActionView(shouldShow: Bool, destination: MKPlacemark? = nil, config: RideActionViewConfiguration? = nil, user: User? = nil) {
         let yOrigin = shouldShow ? self.view.frame.height - self.rideActionViewHeight : self.view.frame.height
         
+        UIView.animate(withDuration: 0.3, animations:  {
+            self.rideActionView.frame.origin.y = yOrigin
+        })
+        
         if shouldShow {
-            guard let destination = destination else { return }
-            rideActionView.destination = destination
+            if let user = user {
+                rideActionView.user = user
+            }
             
-            UIView.animate(withDuration: 0.3, animations:  {
-                self.rideActionView.frame.origin.y = yOrigin
-            })
-        } else {
-            UIView.animate(withDuration: 0.3, animations:  {
-                self.rideActionView.frame.origin.y = yOrigin
-            })
+            if let destination = destination {
+                rideActionView.destination = destination
+            }
+            
+            guard let config = config else { return }
+            rideActionView.configureUI(with: config)
         }
     }
     
@@ -475,7 +485,7 @@ extension HomeController: UITableViewDataSource {
             
             self.mapView.zoomToFit(annotations: annotations)
             
-            self.animateRideActionView(shouldShow: true, destination: selectedPlacemark)
+            self.animateRideActionView(shouldShow: true, destination: selectedPlacemark, config: .requestRide)
         }
         
     }
@@ -513,8 +523,36 @@ extension HomeController: RideActionViewDelegate {
 
 extension HomeController: PickupControllerDelegate {
     func didAcceptTrip(_ trip: Trip) {
-        self.trip?.state = .accepted
-        self.dismiss(animated: true, completion: nil)
+        
+        guard let pickupCoordinates = trip.pickupCoordinates else { return }
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = pickupCoordinates
+        mapView.addAnnotation(annotation)
+        mapView.selectAnnotation(annotation, animated: true)
+        
+        let placemark = MKPlacemark(coordinate: pickupCoordinates)
+        let mapItem = MKMapItem(placemark: placemark)
+        generatePolyline(toDestination: mapItem)
+        
+        let geocoder = CLGeocoder()
+        
+        let pickupLocation = CLLocation(latitude: placemark.coordinate.latitude, longitude: placemark.coordinate.longitude)
+        
+        geocoder.reverseGeocodeLocation(pickupLocation) { (placemark, error) in
+            guard let placemark = placemark?.first else { return }
+            let mkPlacemark = MKPlacemark(placemark: placemark)
+            
+            self.mapView.zoomToFit(annotations: self.mapView.annotations)
+            
+            self.dismiss(animated: true, completion: {
+                guard let passengerUid = trip.passengerUid else { return }
+                
+                Service.shared.fetchUserData(uid: passengerUid) { (passenger) in
+                    self.animateRideActionView(shouldShow: true, destination: mkPlacemark, config: .tripAccepted, user: passenger)
+                }
+            })
+        }
     }
     
 }
